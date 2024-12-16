@@ -59,6 +59,7 @@ def deploy(String environment){
 
 def runApiTests(String environment){
     echo "Running API tests triggered on ${environment} environment.."
+    String lowercaseEnv = environment.toLowerCase()
     sh "docker pull kristinaaraja/api-tests:latest"
     sh "docker run --network=host --rm kristinaaraja/api-tests:latest run greetings greetings_${environment}"
 }
