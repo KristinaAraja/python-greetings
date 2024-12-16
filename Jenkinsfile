@@ -31,12 +31,12 @@ pipeline {
         }
         stage('deploy-to-prod') {
             steps {
-                deploy("PRD")
+                deploy("PROD")
             }
         }
         stage('tests-on-prod') {
             steps {
-                runApiTests("PRD")
+                runApiTests("PROD")
             }
         }
     }
